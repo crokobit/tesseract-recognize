@@ -298,7 +298,9 @@ int main( int argc, char *argv[] ) {
     }
     if ( gb_image != NULL )
       page.loadImage( gb_image );
-    images = page.crop( (std::string(gb_xpath)+"/_:Coords").c_str(), NULL, false );
+
+    fprintf( stderr, "IVAN xpath: %s", (std::string(gb_xpath)+"/_:Coords").c_str() );
+    images = page.crop( (std::string(gb_xpath)+"/_:TextLine/_:Coords").c_str(), NULL, false );
   }
 
   /// Input is image ///
